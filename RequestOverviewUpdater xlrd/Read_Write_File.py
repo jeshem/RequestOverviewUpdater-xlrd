@@ -175,11 +175,10 @@ class Read_Write_File(object):
                 search = proj_keys[i]
                 
             for col_index in range(1, ws.max_column):
-                if ws.cell(row=6, column = col_index).value == search:
+                if ws.cell(row=5, column = col_index).value == search:
                     key_col = col_index
                     col_index = ws.max_column
-                col_index += 1
-                    
+                print(ws.cell(row=5, column = col_index).value)
 
             ws.cell(row=current_row, column=key_col).value = proj_data[proj_keys[i]]
         
@@ -187,7 +186,7 @@ class Read_Write_File(object):
             print(str(i))
 
             for col_index in range(1, ws.max_column):
-                if ws.cell(row=6, column = col_index).value == serv_keys[i]:
+                if ws.cell(row=5, column = col_index).value == serv_keys[i]:
                     key_col = col_index
                     col_index = ws.max_column
                 col_index += 1
