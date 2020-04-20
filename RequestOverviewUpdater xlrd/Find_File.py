@@ -38,7 +38,7 @@ class Find_File:
                 
                 Replace "<insert name of folder you want ignored here>" with the name the folder you want the program to ignore
                 '''
-                if not pywildcard.fnmatch(file, self.overviewfile + ".xlsx") and not pywildcard.fnmatch(file, self.overviewfile + " *.xlsx") and not file.startswith("~$") and not file == "<insert name of folder you want ignored here>":
+                if not pywildcard.fnmatch(file, self.overviewfile + ".xlsx") and not pywildcard.fnmatch(file, self.overviewfile + " *.xlsx") and not file.startswith("~$") and not file == "ignore":
                     #if the file is a directory, go into it and check for new files
                     if os.path.isdir(loc + "\\" + file):
                         list = self.find_new_files(loc + "\\" + file, list)

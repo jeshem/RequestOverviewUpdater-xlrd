@@ -163,7 +163,6 @@ class Read_Write_File(object):
     
         #find the columns that the keys are in and insert the corresponding data into those columns
         for i in range(len(proj_keys)):
-            print(str(i))
             '''
             Some of the keys taken from the request form do not match the column titles so I had to hardcode it
             to look for the correct titles upon coming across those keys.
@@ -174,6 +173,7 @@ class Read_Write_File(object):
             else:
                 search = proj_keys[i]
                 
+            #The row variable should be the row where the column titles are located
             for col_index in range(1, ws.max_column):
                 if ws.cell(row=5, column = col_index).value == search:
                     key_col = col_index
@@ -182,9 +182,8 @@ class Read_Write_File(object):
 
             ws.cell(row=current_row, column=key_col).value = proj_data[proj_keys[i]]
         
-        for i in range (len(serv_keys)):
-            print(str(i))
-
+        for i in range (len(serv_keys)):            
+            #The row variable should be the row where the column titles are located
             for col_index in range(1, ws.max_column):
                 if ws.cell(row=5, column = col_index).value == serv_keys[i]:
                     key_col = col_index
